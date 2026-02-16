@@ -38,5 +38,10 @@ function displayChange() {
             }
         });
     });
+    const clearButton = document.querySelector("#Clear");
+    clearButton.addEventListener("click", () => {
+        display.textContent = "";
+    })
 }
+displayChange();
 
