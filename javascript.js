@@ -14,7 +14,10 @@ function divide(firstNumber, secondNumber) {
     return firstNumber / secondNumber;
 }
 
-let operator = button.Operator.textContent;
+
+let firstNumber = null;
+let secondNumber = null;
+let operator = null;
 
 function operate(firstNumber, secondNumber, operator) {
     if (operator == "+") {
@@ -27,9 +30,6 @@ function operate(firstNumber, secondNumber, operator) {
         return divide(firstNumber, secondNumber);
     }
 }
-
- 
-
 
 function displayChange() {
     const buttons = document.querySelectorAll("button");
@@ -46,7 +46,7 @@ function displayChange() {
     });
 
     const operatorButtons = document.querySelectorAll(".Operator");
-    operatorButtons.forEach((button => {
+    operatorButtons.forEach((button) => {
         button.addEventListener("click", () => {
             if (firstNumber === null) {
                 firstNumber = currentNumber;
@@ -57,20 +57,27 @@ function displayChange() {
             }
             operator = button.textContent;
             currentNumber = "";
-            const equalsButton = document.querySelector("#Equals");
-            equalsButton.addEventListener("click", () => {
-                equalsOperation = operate(Number(firstNumber), Number(secondNumber), operator);
-            });        
         });
-    }));
+    });
+    const equalsButton = document.querySelector("#Equals");
     equalsButton.addEventListener("click", () => {
-        equalsOperation = operate(Number(firstNumber), Number(secondNumber), operator);
-        display.textContent = equalsoperation;
+        if (firstNumber === null) {
+            firstNumber = currentNumber;
+        } else if (operator) {
+        secondNumber = currentNumber;
+        const equalsOperation = operate(Number(firstNumber), Number(secondNumber), operator);
+        display.textContent = equalsOperation;
+        firstNumber = equalsOperation;
+        }
+        currentNumber = "";
     });
 
     const clearButton = document.querySelector("#Clear");
     clearButton.addEventListener("click", () => {
         display.textContent = "";
+        firstNumber = null;
+        secondNumber = null;
+        currentNumber = null;
     })
 }
 displayChange();
