@@ -74,11 +74,12 @@ function displayChange() {
 
     const clearButton = document.querySelector("#Clear");
     clearButton.addEventListener("click", () => {
-        display.textContent = "";
+        display.textContent = "0";
         firstNumber = null;
         secondNumber = null;
-        currentNumber = null;
-    })
+        currentNumber = "";
+        operator = null;
+    });
 }
 displayChange();
 
