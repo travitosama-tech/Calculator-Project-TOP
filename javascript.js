@@ -61,15 +61,15 @@ function displayChange() {
     });
     const equalsButton = document.querySelector("#Equals");
     equalsButton.addEventListener("click", () => {
+        if (currentNumber === "") return;
         if (firstNumber === null) {
             firstNumber = currentNumber;
         } else if (operator) {
-        secondNumber = currentNumber;
-        const equalsOperation = operate(Number(firstNumber), Number(secondNumber), operator);
-        display.textContent = equalsOperation;
-        firstNumber = equalsOperation;
+            secondNumber = currentNumber;
+            const equalsOperation = operate(Number(firstNumber), Number(secondNumber), operator);
+            display.textContent = equalsOperation;
+            firstNumber = equalsOperation;
         }
-        currentNumber = "";
         operator = null;
         secondNumber = null;
     });
