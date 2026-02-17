@@ -1,0 +1,53 @@
+body {
+    font-family: "Roboto";
+    display: flex;
+    flex-direction: row;   
+}
+
+.first-numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+}
+
+.second-numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+}
+
+
+.third-numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-end;
+}
+
+.operator-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+    align-content: space-around;
+    height: 200px;
+    width: 100px;
+}
+
+.calculator-container {
+    display: flex;
+    height: 300px;
+    width: 150px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    margin: 20px;
+    padding: 50px;
+}
