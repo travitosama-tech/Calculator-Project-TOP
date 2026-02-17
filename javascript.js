@@ -70,6 +70,8 @@ function displayChange() {
         firstNumber = equalsOperation;
         }
         currentNumber = "";
+        operator = null;
+        secondNumber = null;
     });
 
     const clearButton = document.querySelector("#Clear");
