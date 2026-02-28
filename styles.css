@@ -1,53 +1,112 @@
 body {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;   
+    flex-direction: row;
 }
 
-.first-numbers {
+.first-numbers,
+.second-numbers,
+.third-numbers,
+.misc-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-content: space-between;
     align-items: center;
-    align-content: space-around;
-}
-
-.second-numbers {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    align-content: space-around;
-}
-
-
-.third-numbers {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-end;
+    width: 100px;
+    padding: 10px;
 }
 
 .operator-buttons {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: space-around;
-    align-content: space-around;
-    height: 200px;
-    width: 100px;
+    align-items: center;
+    padding: 20px 5px;
+    margin: 10px;
+    gap: 5px;
+    align-self: center;
 }
 
 .calculator-container {
     display: flex;
-    height: 300px;
-    width: 150px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    align-content: space-around;
-    margin: 20px;
-    padding: 50px;
+    justify-content: flex-start;
+    height: 250px;
+    width: 250px;
+    margin: 20px auto;
+    padding-top: 20px;
+    border: 4px solid teal;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 1.5px 4px rgba(0,0,0,0.10);
+    background: linear-gradient(135deg, #f8fffe 0%, #e0eafc 100%);
+}
+
+.Display {
+    display: flex;
+    width: 180px;
+    height: 40px;
+    flex-wrap: wrap;
+    border: 2px solid #222;
+    border-radius: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+    background: #1d1a1a;
+    font-family: 'Orbitron', monospace;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0 16px;
+    color: #39ff14;
+    letter-spacing: 0.15em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.number-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 170px;
+    margin-top: 10px;
+    border: 4px solid lavender;
+    border-radius: 12px;
+    background: #f8faff;
+}
+
+#button.misc-buttons {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 150px;
+}
+
+.button {
+    margin: 8px;
+    padding: 10px 18px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    color: #2d3436;
+    box-shadow: 0 2px 6px rgba(44,62,80,0.08);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.button:hover {
+    background: linear-gradient(135deg, #cfdef3 0%, #e0eafc 100%);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.Operator {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #fff;
+    font-weight: bold;
+}
+.Operator:hover {
+    background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+    color: #fff;
 }
