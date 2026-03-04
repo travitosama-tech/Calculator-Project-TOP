@@ -65,10 +65,10 @@ function displayChange() {
         if (firstNumber === null) {
             firstNumber = currentNumber;
         } else if (operator) {
-            secondNumber = currentNumber;
-            const equalsOperation = operate(Number(firstNumber), Number(secondNumber), operator);
-            display.textContent = equalsOperation;
-            firstNumber = equalsOperation;
+        secondNumber = currentNumber;
+        const equalsOperation = operate(Number(firstNumber), Number(secondNumber), operator);
+        display.textContent = equalsOperation;
+        firstNumber = equalsOperation;
         }
         operator = null;
         secondNumber = null;
@@ -81,6 +81,18 @@ function displayChange() {
         secondNumber = null;
         currentNumber = "";
         operator = null;
+    });
+
+    const decimalButton = document.querySelector("#Decimal");
+    decimalButton.addEventListener("click", () => {
+        if (!currentNumber.includes(".")) {
+            if (currentNumber === "") {
+                currentNumber = "0.";
+            } else {
+                currentNumber += ".";
+            }
+            display.textContent = currentNumber;
+        }
     });
 }
 displayChange();
